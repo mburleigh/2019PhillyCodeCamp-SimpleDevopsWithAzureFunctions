@@ -1,0 +1,5 @@
+{
+    "param file parameter1": "foo",
+    "param file parameter2": "bar",
+    "test": "@Microsoft.KeyVault(SecretUri=https://pj-rad-use-kv-dev.vault.azure.net/secrets/DataExport-CRMB2BAMER/453d062395b94f21b75e8719258f500e)"
+}

@@ -1,0 +1,1 @@
+az webapp config appsettings set -g $RESOURCEGROUP -n $SERVICENAME --settings @applicationSettings.json
