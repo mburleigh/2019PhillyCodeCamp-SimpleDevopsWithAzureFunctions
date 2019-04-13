@@ -28,3 +28,9 @@ steps:
     command: custom
     verbose: false
     customCommand: test
+
+- task: PublishBuildArtifacts@1
+  displayName: 'Publish Artifact: Tests'
+  inputs:
+    PathtoPublish: Tests.Integration
+    ArtifactName: tests

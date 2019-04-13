@@ -1,0 +1,84 @@
+{
+	"info": {
+		"_postman_id": "1380c260-ec57-4024-923a-3787752a521b",
+		"name": "Newman Test",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "good request",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "ba543a22-5679-42bf-8b4c-3b2ad32c5ae3",
+						"exec": [
+							"pm.test(\"Body matches string\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"Hello test\");",
+							"});",
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{url}}HttpTrigger?name=test",
+					"host": [
+						"{{url}}HttpTrigger"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "test"
+						}
+					]
+				},
+				"description": "good request"
+			},
+			"response": []
+		},
+		{
+			"name": "bad request",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "e0a2dbd3-fce5-431e-932a-df9879d9fa04",
+						"exec": [
+							"pm.test(\"Body matches string\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"Please pass a name\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{url}}HttpTrigger",
+					"host": [
+						"{{url}}HttpTrigger"
+					]
+				},
+				"description": "bad request"
+			},
+			"response": []
+		}
+	]
+}
