@@ -49,21 +49,21 @@ fi
 echo "Starting deployment..."
 (
     # these parameters match the ones in the ARM template
-	#params="{
-	#	\"functionName\": { \"value\": \"$serviceName\" },
-	#	\"appServicePlanName\": { \"value\": \"$deploymentName-plan\" },
-	#	\"applicationInsightsName\": { \"value\": \"$deploymentName-ai\" },
-	#	\"storageAccountName\": { \"value\": \"$storageAccountName\" },
-	#	\"location\": { \"value\": \"$resourceGroupLocation\" }
-	#}"
 	params="{
 		\"functionName\": { \"value\": \"$serviceName\" },
 		\"appServicePlanName\": { \"value\": \"$deploymentName-plan\" },
 		\"applicationInsightsName\": { \"value\": \"$deploymentName-ai\" },
 		\"storageAccountName\": { \"value\": \"$storageAccountName\" },
-		\"location\": { \"value\": \"$resourceGroupLocation\" },
-		\"slotName\": { \"value\": \"$slotname\" }
+		\"location\": { \"value\": \"$resourceGroupLocation\" }
 	}"
+	#params="{
+	#	\"functionName\": { \"value\": \"$serviceName\" },
+	#	\"appServicePlanName\": { \"value\": \"$deploymentName-plan\" },
+	#	\"applicationInsightsName\": { \"value\": \"$deploymentName-ai\" },
+	#	\"storageAccountName\": { \"value\": \"$storageAccountName\" },
+	#	\"location\": { \"value\": \"$resourceGroupLocation\" },
+	#	\"slotName\": { \"value\": \"$slotname\" }
+	#}"
 	#echo $params
 
 	# call the Azure CLI
