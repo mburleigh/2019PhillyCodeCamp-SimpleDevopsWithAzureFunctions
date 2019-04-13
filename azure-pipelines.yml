@@ -14,3 +14,17 @@ steps:
   inputs:
     PathtoPublish: Deploy
     ArtifactName: arm
+
+- task: Npm@1
+  displayName: 'npm custom'
+  inputs:
+    command: custom
+    verbose: false
+    customCommand: 'install mocha'
+
+- task: Npm@1
+  displayName: 'npm test'
+  inputs:
+    command: custom
+    verbose: false
+    customCommand: test
